@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <!-- planner.html -->
+<title>StudyMate - Study Planner</title>
+
+    <link rel="stylesheet"
+        href="../style.css">
+
+    <link rel="stylesheet"
+        href="planner.css">
+
+    <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <span>📚</span>
+
+            <h2>
+                StudyMate
+            </h2>
+
+        </div>
+
+
+        <nav>
+
+            <a href="../index.html">
+
+                <span>🏠</span>
+                Dashboard
+
+            </a>
+
+
+            <a href="tasks.html">
+
+                <span>✅</span>
+                Tasks
+
+            </a>
+
+
+            <a href="planner.html"
+                class="active">
+
+                <span>📅</span>
+                Study Planner
+
+            </a>
+
+
+            <a href="notes.html">
+
+                <span>📝</span>
+                Notes
+
+            </a>
+
+
+            <a href="pomodoro.html">
+
+                <span>⏱️</span>
+                Pomodoro
+
+            </a>
+
+
+            <a href="progress.html">
+
+                <span>📊</span>
+                Progress
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button id="themeBtn">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div>
+
+                <h1>
+                    Study Planner 📅
+                </h1>
+
+                <p>
+                    Plan your study sessions and stay organized.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-icon">
+                    S
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Sanjiv Kumar
+                    </strong>
+
+                    <small>
+                        My Profile
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= STUDY STATISTICS ================= -->
+
+        <section class="planner-stats">
+
+
+            <div class="planner-stat">
+
+                <div class="planner-stat-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Sessions
+                    </p>
+
+                    <h2 id="totalSessions">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="planner-stat">
+
+                <div class="planner-stat-icon">
+                    ⏱️
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Study Time
+                    </p>
+
+                    <h2 id="totalStudyTime">
+                        0h 0m
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="planner-stat">
+
+                <div class="planner-stat-icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <p>
+                        Upcoming Sessions
+                    </p>
+
+                    <h2 id="upcomingSessions">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= PLANNER CONTAINER ================= -->
+
+        <section class="planner-container">
+
+
+            <!-- ================= ADD SESSION ================= -->
+
+            <div class="card planner-form-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2 id="plannerFormTitle">
+                            Add Study Session
+                        </h2>
+
+                        <p>
+                            Create a new study schedule
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <form id="plannerForm">
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="e.g. JavaScript"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label for="studyDate">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="studyDate"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- TIME -->
+
+                    <div class="form-group">
+
+                        <label for="studyTime">
+                            Start Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="studyTime"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DURATION -->
+
+                    <div class="form-group">
+
+                        <label for="duration">
+                            Duration
+                        </label>
+
+                        <select
+                            id="duration"
+                            required
+                        >
+
+                            <option value="">
+                                Select duration
+                            </option>
+
+                            <option value="30 minutes">
+                                30 Minutes
+                            </option>
+
+                            <option value="1 hour">
+                                1 Hour
+                            </option>
+
+                            <option value="1.5 hours">
+                                1.5 Hours
+                            </option>
+
+                            <option value="2 hours">
+                                2 Hours
+                            </option>
+
+                            <option value="3 hours">
+                                3 Hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="planner-form-buttons">
+
+                        <button
+                            type="submit"
+                            class="planner-add-btn"
+                            id="plannerSubmitBtn"
+                        >
+
+                            + Add Study Session
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="planner-cancel-btn"
+                            id="plannerCancelBtn"
+                            style="display: none;"
+                        >
+
+                            Cancel
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+
+            <!-- ================= SCHEDULE ================= -->
+
+            <div class="card schedule-card planner-schedule-card">
+
+
+                <div class="card-header">
+
+
+                    <div>
+
+                        <h2>
+                            My Study Schedule
+                        </h2>
+
+                        <p>
+                            Your upcoming study sessions
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div
+                    id="plannerList"
+                    class="planner-list"
+                >
+
+                    <!-- Sessions loaded by JavaScript -->
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="planner.js"></script>
+
+
+</body>
+
+</html>

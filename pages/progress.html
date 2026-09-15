@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- progress.html -->
+<title>StudyMate - Progress</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="stylesheet" href="progress.css">
+
+    <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+
+</head>
+
+<body>
+
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <span>📚</span>
+
+            <h2>StudyMate</h2>
+
+        </div>
+
+
+        <nav>
+
+            <a href="../index.html">
+
+                <span>🏠</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="tasks.html">
+
+                <span>✅</span>
+
+                Tasks
+
+            </a>
+
+
+            <a href="planner.html">
+
+                <span>📅</span>
+
+                Study Planner
+
+            </a>
+
+
+            <a href="notes.html">
+
+                <span>📝</span>
+
+                Notes
+
+            </a>
+
+
+            <a href="pomodoro.html">
+
+                <span>⏱️</span>
+
+                Pomodoro
+
+            </a>
+
+
+            <a href="progress.html" class="active">
+
+                <span>📊</span>
+
+                Progress
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button id="themeBtn">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div>
+
+                <h1>My Progress 📊</h1>
+
+                <p>
+                    Track your study performance and productivity.
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-icon">
+                    S
+                </div>
+
+
+                <div>
+
+                    <strong>Sanjiv Kumar</strong>
+
+                    <small>
+                        My Profile
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Progress Overview -->
+
+        <section class="overview">
+
+
+            <!-- Overall Progress -->
+
+            <div class="progress-main card">
+
+                <h2>
+                    Overall Progress
+                </h2>
+
+                <p>
+                    Your task completion progress
+                </p>
+
+
+                <div class="progress-circle">
+
+                    <div>
+
+                        <strong id="overallProgress">
+                            0%
+                        </strong>
+
+                        <span>
+                            Completed
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-message" id="progressMessage">
+
+                    Start completing your tasks 🚀
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Tasks
+                        </p>
+
+                        <h2 id="totalTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Completed Tasks
+                        </p>
+
+                        <h2 id="completedTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Pending Tasks
+                        </p>
+
+                        <h2 id="pendingTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⏱️
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Pomodoro Sessions
+                        </p>
+
+                        <h2 id="pomodoroSessions">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Study Summary -->
+
+        <section class="study-summary">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Notes
+                    </p>
+
+                    <h2 id="totalNotes">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <p>
+                        Study Sessions
+                    </p>
+
+                    <h2 id="studySessions">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ⏱️
+                </div>
+
+                <div>
+
+                    <p>
+                        Planned Study Time
+                    </p>
+
+                    <h2 id="plannedStudyTime">
+                        0h 0m
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <p>
+                        Productivity
+                    </p>
+
+                    <h2 id="productivityScore">
+                        0%
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- Task Performance -->
+
+        <section class="card performance">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Task Performance
+                    </h2>
+
+                    <p>
+                        Overview of your task completion
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="performance-row">
+
+
+                <!-- Completed -->
+
+                <div class="performance-item">
+
+                    <div class="performance-top">
+
+                        <span>
+                            Completed Tasks
+                        </span>
+
+                        <strong id="completedPercent">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <div id="completedBar"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Pending -->
+
+                <div class="performance-item">
+
+                    <div class="performance-top">
+
+                        <span>
+                            Pending Tasks
+                        </span>
+
+                        <strong id="pendingPercent">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <div id="pendingBar"></div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Study Insights -->
+
+        <section class="card insights">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Study Insights 💡
+                    </h2>
+
+                    <p>
+                        Your current productivity summary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="insights-grid">
+
+
+                <div class="insight">
+
+                    <span>
+                        📋
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Task Progress
+                        </h3>
+
+                        <p id="taskInsight">
+                            Add some tasks to start tracking your progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight">
+
+                    <span>
+                        🍅
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Focus Sessions
+                        </h3>
+
+                        <p id="pomodoroInsight">
+                            Complete Pomodoro sessions to improve your focus.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Study Planning
+                        </h3>
+
+                        <p id="plannerInsight">
+                            Create study sessions to organize your day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight">
+
+                    <span>
+                        📝
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Notes
+                        </h3>
+
+                        <p id="notesInsight">
+                            Create notes to keep your important concepts organized.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Productivity Tips -->
+
+        <section class="card tips">
+
+            <h2>
+                💡 Productivity Tips
+            </h2>
+
+
+            <div class="tips-grid">
+
+
+                <div class="tip">
+
+                    <span>
+                        🎯
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Set Clear Goals
+                        </h3>
+
+                        <p>
+                            Break large tasks into smaller achievable goals.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="tip">
+
+                    <span>
+                        ⏱️
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Use Pomodoro
+                        </h3>
+
+                        <p>
+                            Study in focused sessions with regular breaks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="tip">
+
+                    <span>
+                        📝
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Take Notes
+                        </h3>
+
+                        <p>
+                            Write important concepts to improve your learning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="tip">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Plan Your Day
+                        </h3>
+
+                        <p>
+                            Create a study schedule and follow it consistently.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="progress.js"></script>
+
+</body>
+
+</html>
